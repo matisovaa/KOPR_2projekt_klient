@@ -8,7 +8,6 @@ import javax.jws.WebParam;
 import javax.jws.WebResult;
 import javax.jws.WebService;
 import javax.xml.bind.annotation.XmlSeeAlso;
-import javax.xml.datatype.XMLGregorianCalendar;
 import javax.xml.ws.Action;
 import javax.xml.ws.FaultAction;
 import javax.xml.ws.RequestWrapper;
@@ -76,24 +75,6 @@ public interface EvidenciaService {
 
     /**
      * 
-     * @param priezvisko
-     * @param meno
-     * @return
-     *     returns java.lang.Long
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "pridajUcastnika", targetNamespace = "http://server/", className = "server.PridajUcastnika")
-    @ResponseWrapper(localName = "pridajUcastnikaResponse", targetNamespace = "http://server/", className = "server.PridajUcastnikaResponse")
-    @Action(input = "http://server/EvidenciaService/pridajUcastnikaRequest", output = "http://server/EvidenciaService/pridajUcastnikaResponse")
-    public Long pridajUcastnika(
-        @WebParam(name = "meno", targetNamespace = "")
-        String meno,
-        @WebParam(name = "priezvisko", targetNamespace = "")
-        String priezvisko);
-
-    /**
-     * 
      * @param nazov
      * @return
      *     returns java.lang.Long
@@ -126,5 +107,23 @@ public interface EvidenciaService {
         Long idPrezencnejListiny)
         throws NeexistujucaPrezencnaListinaException
     ;
+
+    /**
+     * 
+     * @param priezvisko
+     * @param meno
+     * @return
+     *     returns java.lang.Long
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "pridajUcastnika", targetNamespace = "http://server/", className = "server.PridajUcastnika")
+    @ResponseWrapper(localName = "pridajUcastnikaResponse", targetNamespace = "http://server/", className = "server.PridajUcastnikaResponse")
+    @Action(input = "http://server/EvidenciaService/pridajUcastnikaRequest", output = "http://server/EvidenciaService/pridajUcastnikaResponse")
+    public Long pridajUcastnika(
+        @WebParam(name = "meno", targetNamespace = "")
+        String meno,
+        @WebParam(name = "priezvisko", targetNamespace = "")
+        String priezvisko);
 
 }

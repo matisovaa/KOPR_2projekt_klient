@@ -12,9 +12,6 @@ import server.*;
 
 public class Klient {
     
-    //private EvidenciaServiceService factory = new EvidenciaServiceService();
-    //private EvidenciaService service = factory.getEvidenciaServicePort();
-    
     public static void main(String[] args) {
         EvidenciaServiceService factory = new EvidenciaServiceService();
         EvidenciaService service = factory.getEvidenciaServicePort();

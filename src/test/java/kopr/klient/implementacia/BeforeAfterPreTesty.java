@@ -41,7 +41,7 @@ public class BeforeAfterPreTesty {
         dataSource.setPassword(DB_PASSWORD);
 
         Factory.INSTANCE.setJdbcTemplate(new JdbcTemplate(dataSource));
-
+       
     }
     
     @Before
